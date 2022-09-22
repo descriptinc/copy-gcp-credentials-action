@@ -1,0 +1,16 @@
+name: 'Copy GCP Credentials to Docker Environment'
+description: 'Copies credentials file into the _other_ running pod'
+inputs:
+    source-file:
+        description: 'Where is the file (the output of google-github-actions/auth)'
+        required: true
+    destination-file:
+        description: 'Where should the file be copied to (so that it can be mounted)'
+        required: true
+outputs:
+    copied-file:
+        description: 'The path of the destination (same as destination-file input)'
+runs:
+    using: 'node16'
+    main: 'dist/main/index.mjs'
+    post: 'dist/cleanup/index.mjs'

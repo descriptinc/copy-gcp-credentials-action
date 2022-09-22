@@ -1,0 +1,31 @@
+{
+  "name": "copy-gcp-credentials-action",
+  "version": "1.0.0",
+  "description": "Github Action to copy GCP credentials around Docker containers",
+  "main": "./dist/main/index.mjs",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:cleanup": "ncc build cleanup.mjs -o dist/cleanup",
+    "build:main": "ncc build main.mjs -o dist/main",
+    "build": "npm run build:cleanup; npm run build:main"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/reacuna/copy-gcp-credentials-action.git"
+  },
+  "keywords": [],
+  "author": "Raúl Acuña <raul@descript.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/reacuna/copy-gcp-credentials-action/issues"
+  },
+  "homepage": "https://github.com/reacuna/copy-gcp-credentials-action#readme",
+  "dependencies": {
+    "@actions/core": "^1.9.1",
+    "@actions/io": "^1.1.2"
+  },
+  "devDependencies": {
+    "@vercel/ncc": "^0.34.0"
+  }
+}
+
